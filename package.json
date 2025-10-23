@@ -1,6 +1,6 @@
 {
   "name": "@project-eleven/dep-doc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Typescript library for linting dependency documentation.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
