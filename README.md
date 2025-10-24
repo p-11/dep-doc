@@ -72,10 +72,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute to this 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Note on releases:
+## Note on releasing:
+
+Run `./setup.sh` to install git hooks.
 
 You must bump the version in `package.json`before creating a release.
-
-In order to catch this, run `./setup.sh` to install git hooks (only need to do this once per clone).
-
-This will install a pre-push hook that ensures you have bumped the version before pushing.
