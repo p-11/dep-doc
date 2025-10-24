@@ -1,20 +1,25 @@
 #!/usr/bin/env node
+import packageJson from '../package.json';
 import { checkDepDoc } from './core';
-import { logError, logSuccess } from './log';
+import { logError, logSuccess, logInfo } from './log';
 
-function main() {
-  const baseDir = process.env.DEPDOC_BASE_DIR || process.cwd();
+function getPackageVersion(): string {
+  return typeof packageJson.version === 'string'
+    ? packageJson.version
+    : 'unknown';
+}
+
+function runDepDoc(baseDir: string): number {
   const res = checkDepDoc(baseDir);
 
   if (res.ok) {
     logSuccess(`dep-doc valid (${res.label})`);
-    process.exit(0);
+    return 0;
   }
 
-  // structured errors
   if (res.errors?.length) {
     for (const e of res.errors) logError(e);
-    process.exit(1);
+    return 1;
   }
 
   logError(`dep-doc failed (${res.label}):`);
@@ -34,6 +39,26 @@ function main() {
       );
     }
   }
+  return 1;
+}
+
+function main() {
+  const [arg] = process.argv.slice(2);
+  const baseDir = process.env.DEPDOC_BASE_DIR || process.cwd();
+
+  if (arg === '--version') {
+    const version = getPackageVersion();
+    logInfo(`version: ${version}`);
+    process.exit(0);
+  }
+
+  if (arg === undefined || arg === '--run') {
+    const exitCode = runDepDoc(baseDir);
+    process.exit(exitCode);
+  }
+
+  logError(`Unknown option: ${arg}`);
+  logError('Usage: dep-doc [--run | --version]');
   process.exit(1);
 }
 
