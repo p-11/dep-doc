@@ -1,6 +1,6 @@
 {
   "name": "@project-eleven/dep-doc",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "A Typescript library for linting dependency documentation.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,7 +24,6 @@
     "clean": "rimraf dist",
     "build": "tsc -b",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run build",
     "pretest": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -32,10 +31,7 @@
     "lint:fix": "eslint --config eslint.config.mjs \"./src/*.ts\" --fix",
     "prettier:check": "prettier --config .prettierrc \"./**/*.+(js|json|ts|mjs)\" --check",
     "prettier:fix": "prettier --config .prettierrc \"./**/*.+(js|json|ts|mjs)\" --write",
-    "check": "npm run lint:check && npm run prettier:check && npm test",
-    "release:patch": "npm version patch -m \"Release v%s\"",
-    "release:minor": "npm version minor -m \"Release v%s\"",
-    "release:major": "npm version major -m \"Release v%s\""
+    "check": "npm run lint:check && npm run prettier:check && npm test"
   },
   "homepage": "https://github.com/p-11/dep-doc#readme",
   "bugs": {

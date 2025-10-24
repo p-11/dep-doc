@@ -85,6 +85,11 @@ purpose = "Serialize"
 scope = "prod"
 
 [[dependency]]
+name = "serde_json"
+purpose = "Fixtures"
+scope = "dev"
+
+[[dependency]]
 name = "leftpad"
 purpose = "Nope"
 scope = "prod"

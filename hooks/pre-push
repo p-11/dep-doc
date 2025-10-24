@@ -1,0 +1,29 @@
+#! /bin/bash
+
+set -euo pipefail
+
+echo "Pre push checks running..."
+
+npm run lint:check
+if [ $? -ne 0 ]; then
+  echo "Lint check failed"
+  exit 1
+fi
+
+echo "✓ Lint check passed"
+
+npm run prettier:check
+if [ $? -ne 0 ]; then
+  echo "Prettier check failed"
+  exit 1
+fi
+
+echo "✓ Prettier check passed"
+
+npm run test
+if [ $? -ne 0 ]; then
+  echo "Tests failed"
+  exit 1
+fi
+
+echo "✓ All tests passed"

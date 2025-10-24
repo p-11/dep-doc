@@ -78,6 +78,11 @@ purpose = "Utility lib"
 scope = "prod"
 
 [[dependency]]
+name = "prettier"
+purpose = "Formatter"
+scope = "dev"
+
+[[dependency]]
 name = "leftpad"
 purpose = "Nope"
 scope = "prod"

@@ -1,0 +1,69 @@
+[[dependency]]
+name = "toml"
+purpose = "Parsing and serializing TOML files"
+scope = "prod"
+
+[[dependency]]
+name = "zod"
+purpose = "Schema validation and runtime type safety"
+scope = "prod"
+
+[[dependency]]
+name = "@types/jest"
+purpose = "TypeScript type definitions for Jest"
+scope = "dev"
+
+[[dependency]]
+name = "@typescript-eslint/eslint-plugin"
+purpose = "ESLint rules for TypeScript"
+scope = "dev"
+
+[[dependency]]
+name = "@typescript-eslint/parser"
+purpose = "ESLint parser for TypeScript"
+scope = "dev"
+
+[[dependency]]
+name = "eslint"
+purpose = "Code linting and static analysis"
+scope = "dev"
+
+[[dependency]]
+name = "eslint-config-prettier"
+purpose = "Disables ESLint rules that conflict with Prettier"
+scope = "dev"
+
+[[dependency]]
+name = "eslint-plugin-prettier"
+purpose = "Runs Prettier as an ESLint rule"
+scope = "dev"
+
+[[dependency]]
+name = "nodemon"
+purpose = "Automatically restarts the app during development when files change"
+scope = "dev"
+
+[[dependency]]
+name = "prettier"
+purpose = "Code formatting to enforce consistent style"
+scope = "dev"
+
+[[dependency]]
+name = "ts-jest"
+purpose = "Jest preprocessor for TypeScript"
+scope = "dev"
+
+[[dependency]]
+name = "ts-node"
+purpose = "Run TypeScript directly without precompiling"
+scope = "dev"
+
+[[dependency]]
+name = "typescript"
+purpose = "TypeScript compiler"
+scope = "dev"
+
+[[dependency]]
+name = "typescript-eslint"
+purpose = "Unified configuration for TypeScript + ESLint integration"
+scope = "dev"
